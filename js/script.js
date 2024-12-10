@@ -1,3 +1,35 @@
+// تفعيل القائمة المتنقلة
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navList = document.querySelector('.nav-list');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // تبديل حالة القائمة عند النقر على الزر
+    mobileMenuBtn.addEventListener('click', function() {
+        toggleMenu();
+    });
+
+    // إغلاق القائمة عند النقر على أي رابط
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                toggleMenu();
+            }
+            
+            // إزالة الكلاس active من جميع الروابط
+            navLinks.forEach(l => l.classList.remove('active'));
+            // إضافة الكلاس active للرابط المنقور
+            this.classList.add('active');
+        });
+    });
+
+    // دالة تبديل حالة القائمة
+    function toggleMenu() {
+        navList.classList.toggle('show');
+        mobileMenuBtn.classList.toggle('active');
+    }
+});
+
 // تعريف شفرة مورس
 const morseCode = {
     'ا': '.-', 'ب': '-...', 'ت': '-', 'ث': '-.-.', 'ج': '.---',

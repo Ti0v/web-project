@@ -1159,3 +1159,597 @@ main.container {
 .encryption-section {
     padding-top: 1rem;
 }
+
+/* تنسيق صفحة اتصل بنا */
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.section-title {
+    color: #1a237e;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+}
+
+.contact-item i {
+    font-size: 2rem;
+    color: #1a237e;
+    margin-bottom: 1rem;
+}
+
+.contact-item h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.contact-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1a237e;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn i {
+    margin-left: 0.5rem;
+}
+
+.btn-primary {
+    background-color: #1a237e;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0d47a1;
+    transform: translateY(-2px);
+}
+
+/* التصميم المتجاوب */
+@media (max-width: 768px) {
+    .card {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .contact-item {
+        padding: 1rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.6rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .contact-item i {
+        font-size: 1.5rem;
+    }
+
+    .contact-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .contact-item p {
+        font-size: 0.9rem;
+    }
+}
+
+/* المتغيرات العامة */
+:root {
+    --primary-color: #1a237e;
+    --secondary-color: #0d47a1;
+    --text-color: #333;
+    --light-text: #666;
+    --white: #fff;
+    --light-bg: #f8f9fa;
+    --border-radius: 8px;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --container-width: 1200px;
+    --spacing: 2rem;
+}
+
+/* التنسيقات العامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing);
+}
+
+/* الصفحة الرئيسية */
+.encryption-section {
+    padding: 2rem 0;
+}
+
+.intro-text {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.intro-description {
+    color: var(--light-text);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.algorithm-list {
+    margin-bottom: 2rem;
+}
+
+.algorithm-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    background: var(--white);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.algorithm-item i {
+    color: var(--primary-color);
+    margin-left: 1rem;
+    font-size: 1.2rem;
+}
+
+/* نموذج التشفير */
+.encryption-form {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-family: 'Cairo', sans-serif;
+    resize: vertical;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.buttons-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn i {
+    margin-left: 0.5rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-secondary {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* التصميم المتجاوب */
+@media (max-width: 1200px) {
+    :root {
+        --container-width: 960px;
+        --spacing: 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    :root {
+        --container-width: 720px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --container-width: 540px;
+        --spacing: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .encryption-form {
+        padding: 1.5rem;
+    }
+
+    .buttons-group {
+        grid-template-columns: 1fr;
+    }
+
+    .algorithm-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .algorithm-item i {
+        margin: 0 0 1rem 0;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --container-width: 100%;
+        --spacing: 0.8rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    .intro-description {
+        font-size: 0.9rem;
+    }
+
+    .encryption-form {
+        padding: 1rem;
+        margin: 0 0.5rem;
+    }
+
+    .form-control {
+        padding: 0.6rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* صفحة حول التشفير */
+.about-section {
+    padding: 2rem 0;
+}
+
+.supervisor-info {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.supervisor-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.supervisor-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.algorithms-list {
+    list-style: none;
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.algorithm-info {
+    flex: 1;
+}
+
+.algorithm-example {
+    background: var(--light-bg);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+}
+
+/* التصميم المتجاوب لصفحة حول التشفير */
+@media (max-width: 768px) {
+    .supervisor-card {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+
+    .supervisor-icon {
+        font-size: 2.5rem;
+    }
+
+    .algorithms-list {
+        gap: 1.5rem;
+    }
+
+    .algorithm-example {
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .supervisor-card {
+        padding: 1rem;
+    }
+
+    .supervisor-icon {
+        font-size: 2rem;
+    }
+
+    .algorithm-info h4 {
+        font-size: 1.1rem;
+    }
+
+    .algorithm-example {
+        font-size: 0.9rem;
+    }
+}
+
+/* صفحة اتصل بنا */
+.contact-section {
+    padding: 2rem 0;
+}
+
+.contact-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--light-bg);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* التصميم المتجاوب لصفحة اتصل بنا */
+@media (max-width: 768px) {
+    .contact-card {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .contact-item {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-card {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+
+    .contact-item {
+        padding: 0.8rem;
+    }
+}
+
+/* تذييل الصفحة */
+footer {
+    background: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* الإشعارات */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    background: var(--white);
+    box-shadow: var(--shadow);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: var(--transition);
+    z-index: 1000;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.notification.success {
+    background: #4caf50;
+    color: var(--white);
+}
+
+.notification.info {
+    background: #2196f3;
+    color: var(--white);
+}
+
+/* التصميم المتجاوب للإشعارات */
+@media (max-width: 576px) {
+    .notification {
+        left: 20px;
+        right: 20px;
+        text-align: center;
+    }
+}
