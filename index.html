@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أداة التشفير - جامعة طيبة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="university-info">
+            <div class="university-name">جامعة طيبة</div>
+            <div class="college-name">كلية علوم وهندسة الحاسب الآلي</div>
+        </div>
+        <div class="header-content">
+            <a href="index.html" class="brand">
+                <span class="brand-logo">🔒</span>
+                <span class="brand-name">أداة التشفير</span>
+            </a>
+            <nav class="main-nav">
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> حول التشفير</a></li>
+                    <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="card encryption-form">
+            <h2 class="section-title">أداة التشفير</h2>
+            <textarea id="inputText" placeholder="أدخل النص هنا..." dir="auto"></textarea>
+            <textarea id="outputText" placeholder="النتيجة..." readonly dir="auto"></textarea>
+            <div class="button-group">
+                <button onclick="morseEncrypt()" class="btn btn-primary">
+                    <i class="fas fa-lock"></i> تشفير مورس
+                </button>
+                <button onclick="morseDecrypt()" class="btn btn-secondary">
+                    <i class="fas fa-unlock"></i> فك تشفير مورس
+                </button>
+                <button onclick="atbashEncrypt()" class="btn btn-primary">
+                    <i class="fas fa-lock"></i> تشفير أتباش
+                </button>
+                <button onclick="atbashDecrypt()" class="btn btn-secondary">
+                    <i class="fas fa-unlock"></i> فك تشفير أتباش
+                </button>
+                <button onclick="caesarEncrypt()" class="btn btn-primary">
+                    <i class="fas fa-lock"></i> تشفير قيصر
+                </button>
+                <button onclick="caesarDecrypt()" class="btn btn-secondary">
+                    <i class="fas fa-unlock"></i> فك تشفير قيصر
+                </button>
+                <button onclick="cleanInput()" class="btn btn-accent">
+                    <i class="fas fa-broom"></i> مسح النص
+                </button>
+                <button onclick="copyOutput()" class="btn btn-accent">
+                    <i class="fas fa-copy"></i> نسخ النتيجة
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">فريق المشروع</h2>
+            <p class="section-subtitle">تحت إشراف: د. فهد بن ناصر </p>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">👨‍💻</div>
+                    <h3 class="team-name">مازن الأحمدي</h3>
+                    <p class="team-id">ID: 4003295</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">👨‍💻</div>
+                    <h3 class="team-name">زياد القليطي</h3>
+                    <p class="team-id">ID: 4201369</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">👨‍💻</div>
+                    <h3 class="team-name">فارس فهدالحربي</h3>
+                    <p class="team-id">ID: 4028983</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">👨‍💻</div>
+                    <h3 class="team-name">زياد مفرح الجهني</h3>
+                    <p class="team-id">ID: 4107628</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2024 - مشروع برمجة الويب M3</p>
+    </footer>
+
+    <script>
+        const morseCodeMap = {
+            'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.',
+            'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..',
+            'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.',
+            'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
+            'Y': '-.--', 'Z': '--..',
+            'a': '.-', 'b': '-...', 'c': '-.-.', 'd': '-..', 'e': '.', 'f': '..-.',
+            'g': '--.', 'h': '....', 'i': '..', 'j': '.---', 'k': '-.-', 'l': '.-..',
+            'm': '--', 'n': '-.', 'o': '---', 'p': '.--.', 'q': '--.-', 'r': '.-.',
+            's': '...', 't': '-', 'u': '..-', 'v': '...-', 'w': '.--', 'x': '-..-',
+            'y': '-.--', 'z': '--..',
+            '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-',
+            '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.',
+            ' ': '/'
+        };
+
+        const reverseMorseCodeMap = Object.entries(morseCodeMap).reduce((obj, [key, value]) => {
+            obj[value] = key;
+            return obj;
+        }, {});
+
+        function morseEncrypt() {
+            const input = document.getElementById('inputText').value;
+            let result = '';
+            for (const char of input) {
+                if (char >= 'A' && char <= 'Z') {
+                    result += '*' + morseCodeMap[char] + ' ';
+                } else if (morseCodeMap[char]) {
+                    result += morseCodeMap[char] + ' ';
+                } else {
+                    result += char + ' ';
+                }
+            }
+            document.getElementById('outputText').value = result.trim();
+        }
+
+        function morseDecrypt() {
+            const input = document.getElementById('inputText').value.trim();
+            const morseChars = input.split(' ');
+            let result = '';
+            for (const morseChar of morseChars) {
+                if (morseChar.startsWith('*')) {
+                    const plainChar = reverseMorseCodeMap[morseChar.slice(1)];
+                    result += plainChar ? plainChar.toUpperCase() : '';
+                } else if (reverseMorseCodeMap[morseChar]) {
+                    result += reverseMorseCodeMap[morseChar];
+                } else if (morseChar === '/') {
+                    result += ' ';
+                } else {
+                    result += morseChar;
+                }
+            }
+            document.getElementById('outputText').value = result;
+        }
+
+        function atbashEncrypt() {
+            const input = document.getElementById('inputText').value;
+            let result = '';
+            for (const char of input) {
+                if (char >= 'A' && char <= 'Z') {
+                    result += String.fromCharCode('Z'.charCodeAt(0) - (char.charCodeAt(0) - 'A'.charCodeAt(0)));
+                } else if (char >= 'a' && char <= 'z') {
+                    result += String.fromCharCode('z'.charCodeAt(0) - (char.charCodeAt(0) - 'a'.charCodeAt(0)));
+                } else {
+                    result += char;
+                }
+            }
+            document.getElementById('outputText').value = result;
+        }
+
+        function atbashDecrypt() {
+            atbashEncrypt();
+        }
+
+        function caesarEncrypt() {
+            const input = document.getElementById('inputText').value;
+            const shift = 3;
+            let result = '';
+            for (const char of input) {
+                if (char >= 'A' && char <= 'Z') {
+                    result += String.fromCharCode(((char.charCodeAt(0) - 'A'.charCodeAt(0) + shift) % 26) + 'A'.charCodeAt(0));
+                } else if (char >= 'a' && char <= 'z') {
+                    result += String.fromCharCode(((char.charCodeAt(0) - 'a'.charCodeAt(0) + shift) % 26) + 'a'.charCodeAt(0));
+                } else {
+                    result += char;
+                }
+            }
+            document.getElementById('outputText').value = result;
+        }
+
+        function caesarDecrypt() {
+            const input = document.getElementById('inputText').value;
+            const shift = 3;
+            let result = '';
+            for (const char of input) {
+                if (char >= 'A' && char <= 'Z') {
+                    result += String.fromCharCode(((char.charCodeAt(0) - 'A'.charCodeAt(0) - shift + 26) % 26) + 'A'.charCodeAt(0));
+                } else if (char >= 'a' && char <= 'z') {
+                    result += String.fromCharCode(((char.charCodeAt(0) - 'a'.charCodeAt(0) - shift + 26) % 26) + 'a'.charCodeAt(0));
+                } else {
+                    result += char;
+                }
+            }
+            document.getElementById('outputText').value = result;
+        }
+
+        function cleanInput() {
+            document.getElementById('inputText').value = '';
+            document.getElementById('outputText').value = '';
+        }
+
+        function copyOutput() {
+            const output = document.getElementById('outputText');
+            output.select();
+            document.execCommand('copy');
+        }
+    </script>
+</body>
+</html>

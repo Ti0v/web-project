@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا - جامعة طيبة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="university-info">
+            <div class="university-name">جامعة طيبة</div>
+            <div class="college-name">كلية علوم وهندسة الحاسب الآلي</div>
+        </div>
+        <div class="header-content">
+            <a href="index.html" class="brand">
+                <span class="brand-logo">🔒</span>
+                <span class="brand-name">أداة التشفير</span>
+            </a>
+            <nav class="main-nav">
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> حول التشفير</a></li>
+                    <li><a href="contact.html" class="nav-link active"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="card">
+            <h2 class="section-title">اتصل بنا</h2>
+            <p class="section-subtitle">يمكنك التواصل معنا عبر النموذج التالي أو من خلال وسائل التواصل المباشرة</p>
+            
+            <div class="contact-info">
+                <!-- <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>البريد الإلكتروني</h3>
+                    <p>s44003295@st.uqu.edu.sa</p>
+                    <p>s44201723@st.uqu.edu.sa</p>
+                    <p>s44201369@st.uqu.edu.sa</p>
+                </div> -->
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>العنوان</h3>
+                    <p>كلية علوم وهندسة الحاسب الآلي</p>
+                    <p>جامعة طيبة</p>
+                    <p>المدينة المنورة - المملكة العربية السعودية</p>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">الاسم</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">الموضوع</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">الرسالة</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i>
+                    إرسال الرسالة
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2024 - مشروع برمجة الويب</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
