@@ -34,67 +34,89 @@
     </header>
 
     <main class="container">
-        <div class="card encryption-form">
-            <h2 class="section-title">أداة التشفير</h2>
-            <textarea id="inputText" placeholder="أدخل النص هنا..." dir="auto"></textarea>
-            <textarea id="outputText" placeholder="النتيجة..." readonly dir="auto"></textarea>
-            <div class="button-group">
-                <button onclick="morseEncrypt()" class="btn btn-primary">
-                    <i class="fas fa-lock"></i> تشفير مورس
-                </button>
-                <button onclick="morseDecrypt()" class="btn btn-secondary">
-                    <i class="fas fa-unlock"></i> فك تشفير مورس
-                </button>
-                <button onclick="atbashEncrypt()" class="btn btn-primary">
-                    <i class="fas fa-lock"></i> تشفير أتباش
-                </button>
-                <button onclick="atbashDecrypt()" class="btn btn-secondary">
-                    <i class="fas fa-unlock"></i> فك تشفير أتباش
-                </button>
-                <button onclick="caesarEncrypt()" class="btn btn-primary">
-                    <i class="fas fa-lock"></i> تشفير قيصر
-                </button>
-                <button onclick="caesarDecrypt()" class="btn btn-secondary">
-                    <i class="fas fa-unlock"></i> فك تشفير قيصر
-                </button>
-                <button onclick="cleanInput()" class="btn btn-accent">
-                    <i class="fas fa-broom"></i> مسح النص
-                </button>
-                <button onclick="copyOutput()" class="btn btn-accent">
-                    <i class="fas fa-copy"></i> نسخ النتيجة
-                </button>
+        <section class="encryption-section">
+            <div class="intro-text">
+                <h2 class="section-title">مرحباً بكم في أداة التشفير</h2>
+                <p class="intro-description">
+                    هذه الأداة تمكنكم من تشفير وفك تشفير النصوص باستخدام ثلاث خوارزميات مختلفة:
+                </p>
+                <div class="algorithm-list">
+                    <div class="algorithm-item">
+                        <i class="fas fa-dot-circle"></i>
+                        <span>شفرة مورس: نظام ترميز يستخدم النقاط والشرطات لتمثيل الحروف والأرقام</span>
+                    </div>
+                    <div class="algorithm-item">
+                        <i class="fas fa-dot-circle"></i>
+                        <span>شفرة أتباش: طريقة تشفير تقوم بعكس الحروف الأبجدية</span>
+                    </div>
+                    <div class="algorithm-item">
+                        <i class="fas fa-dot-circle"></i>
+                        <span>شفرة قيصر: تقنية تشفير كلاسيكية تعتمد على إزاحة الحروف</span>
+                    </div>
+                </div>
             </div>
-        </div>
-    </main>
+            <div class="card encryption-form">
+                <h2 class="section-title">أداة التشفير</h2>
+                <textarea id="inputText" placeholder="أدخل النص هنا..." dir="auto"></textarea>
+                <textarea id="outputText" placeholder="النتيجة..." readonly dir="auto"></textarea>
+                <div class="button-group">
+                    <button onclick="morseEncrypt()" class="btn btn-primary">
+                        <i class="fas fa-lock"></i> تشفير مورس
+                    </button>
+                    <button onclick="morseDecrypt()" class="btn btn-secondary">
+                        <i class="fas fa-unlock"></i> فك تشفير مورس
+                    </button>
+                    <button onclick="atbashEncrypt()" class="btn btn-primary">
+                        <i class="fas fa-lock"></i> تشفير أتباش
+                    </button>
+                    <button onclick="atbashDecrypt()" class="btn btn-secondary">
+                        <i class="fas fa-unlock"></i> فك تشفير أتباش
+                    </button>
+                    <button onclick="caesarEncrypt()" class="btn btn-primary">
+                        <i class="fas fa-lock"></i> تشفير قيصر
+                    </button>
+                    <button onclick="caesarDecrypt()" class="btn btn-secondary">
+                        <i class="fas fa-unlock"></i> فك تشفير قيصر
+                    </button>
+                    <button onclick="cleanInput()" class="btn btn-accent">
+                        <i class="fas fa-broom"></i> مسح النص
+                    </button>
+                    <button onclick="copyOutput()" class="btn btn-accent">
+                        <i class="fas fa-copy"></i> نسخ النتيجة
+                    </button>
+                </div>
+            </div>
+        </section>
 
-    <section class="team-section">
-        <div class="container">
-            <h2 class="section-title">فريق المشروع</h2>
-            <p class="section-subtitle">تحت إشراف: د. فهد بن ناصر </p>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-avatar">👨‍💻</div>
-                    <h3 class="team-name">مازن الأحمدي</h3>
-                    <p class="team-id">ID: 4003295</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">👨‍💻</div>
-                    <h3 class="team-name">زياد القليطي</h3>
-                    <p class="team-id">ID: 4201369</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">👨‍💻</div>
-                    <h3 class="team-name">فارس فهدالحربي</h3>
-                    <p class="team-id">ID: 4028983</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">👨‍💻</div>
-                    <h3 class="team-name">زياد مفرح الجهني</h3>
-                    <p class="team-id">ID: 4107628</p>
+        <section class="team-section">
+            <div class="container">
+                <h2 class="section-title">فريق المشروع</h2>
+                <p class="section-subtitle">تحت إشراف: د. فهد بن ناصر </p>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar">👨‍💻</div>
+                        <h3 class="team-name">مازن الأحمدي</h3>
+                        <p class="team-id">ID: 4003295</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">👨‍💻</div>
+                        <h3 class="team-name">زياد القليطي</h3>
+                        <p class="team-id">ID: 4201369</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">👨‍💻</div>
+                        <h3 class="team-name">فارس فهدالحربي</h3>
+                        <p class="team-id">ID: 4028983</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">👨‍💻</div>
+                        <h3 class="team-name">زياد مفرح الجهني</h3>
+                        <p class="team-id">ID: 4107628</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <p>جميع الحقوق محفوظة &copy; 2024 - مشروع برمجة الويب M3</p>
